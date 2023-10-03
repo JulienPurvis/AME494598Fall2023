@@ -20,7 +20,36 @@ function start()
 <div id='results'> </div>
 
 <div id="turorial">
-
+<h2>How to run server and watch sensors</h2>
+<p>Open your sanbox lab and star the lab.
+  <br>Once the lab has started open the ec2 portal and start a new instance
+  <br>Create the instance on ubuntu (20.04) with 28gb of storage and no key pair
+  </p>
+  <img src="Screen Shot 2023-10-03 at 12.26.49 PM.png" alt="Creating the Ec2" style="width:500px;height:300px;">
+  <p>Add inbound rules to the security group allowing inbound traffic anywhere ipv4 on ports 8080, 80, and 1234<p>
+    <img src="Screen Shot 2023-10-03 at 12.26.19 PM.png" alt="add security rules" style="width:500px;height:300px;">
+  <p>Once the instance is created ssh into the instance and run the following commands
+      <br>curl -s https://gist.githubusercontent.com/tejaswigowda/f289e9bff13d152876e8d4b3281142f8/raw/df37df2e16a3166e686357a045751a7c18bbeebe/installNodeMongoUbuntu16.04.sh  | bash
+      <br>sudo npm install -g n
+      <br>sudo npm install -g latest
+    </p>
+    <img src="Screen Shot 2023-10-03 at 12.26.11 PM.png" alt="Setting up ec2 libraries" style="width:500px;height:300px;">
+    <p>
+      Clone the git repository into the EC2 instance with
+<br>Git clone “Repo link”
+<br>Navigate to the server directory on your repo and run the following
+<br>Node server.js
+</p>
+  <img src="Screen Shot 2023-10-03 at 12.43.08 PM.png" alt="The EC2 Server Page" style="width:500px;height:300px;">
+  <p>Now for the Watch:
+    <br>Add the code from this link into a new sketch
+    <br>Change the ssid and password to match your personal hotspot
+    <br>Change the server url to match the public IP of your ec2
+    <br>Navigate to the public ip of your server in your bro
+    <br>Push the code to your watch and watch the magic happen 
+    </p>
+    <img src="Screen Shot 2023-10-03 at 1.01.54 PM.png" alt="the Arduino editor" style="width:500px;height:300px;">
+   
 
 </div>
 
