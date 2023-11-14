@@ -71,7 +71,7 @@ void setup() {
 
     
       WiFi.begin(ssid, password);
-  Serial.println("Connecting");
+    Serial.println("Connecting");
   unsigned long delaymillis = millis();
   while(WiFi.status() != WL_CONNECTED) {
     if(millis() < delaymillis + 500){
