@@ -6,7 +6,7 @@ var methodOverride = require('method-override');
 var hostname = process.env.HOSTNAME || 'localhost';
 var port = 8080;
 
-var accX, accY, accZ;
+var quadX, quadY, quadZ, quadW;
 
 
 app.get("/", function (req, res) {
@@ -14,9 +14,10 @@ app.get("/", function (req, res) {
 });
 
 app.get("/sendData", function (req, res) {
-    accX = req.query.x
-    accY = req.query.y
-    accZ = req.query.z
+    quadX = req.query.x
+    quadY = req.query.y
+    quadZ = req.query.z
+    quadW = req.query.w
     req.query.time = new Date().getTime();
     res.end("OK");
     console.log(req.query, new Date());
@@ -26,9 +27,10 @@ app.get("/sendData", function (req, res) {
 app.get("/getData", function (req, res) {
   var ret = {}
 
-    ret.x = accX; 
-    ret.y = accY; 
-    ret.z = accZ; 
+  ret.x = quadX; 
+  ret.y = quadY; 
+  ret.z = quadZ;
+  ret.w = quadW; 
     
     res.send(JSON.stringify(ret));
 });
