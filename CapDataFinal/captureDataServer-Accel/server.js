@@ -39,11 +39,10 @@ app.get("/getData", function (req, res) {
     ret.z = quadZ;
     ret.w = quadW; 
     
-    res.send(JSON.stringify(ret));
+    res.send(ret);
 });
 
 app.use(methodOverride());
-app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
 app.use(errorHandler());
 
